@@ -35,7 +35,7 @@ build_folder = os.path.join(client_folder, "build")
     
 @application.route('/api/send-email', methods=['POST'])
 def submit_window_request():
-    """Обработчик заявки на окна с полными данными"""
+    """Обработчик заявки с полными данными"""
     try:
         data = request.get_json()
         
@@ -66,7 +66,7 @@ def submit_window_request():
 
         # Отправка email
         msg = Message(
-            subject=f'Новая заявка на окна от {data.get("name")}',
+            subject=f'Новая заявка от {data.get("name")}',
             recipients=[os.getenv('TARGET_EMAIL', application.config['MAIL_DEFAULT_SENDER'])],
             html=email_body
         )
