@@ -1,0 +1,92 @@
+.tracking-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.tracking-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.tracking-content {
+  position: relative;
+  z-index: 2;
+}
+
+.tracking-image {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(14, 42, 71, 0.15);
+}
+
+.tracking-image img {
+  width: 100%;
+  display: block;
+}
+
+.tracking-features {
+  margin-top: 40px;
+  display: grid;
+  gap: 20px;
+}
+
+.tracking-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.tracking-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background: #e63946;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.tracking-feature-text h4 {
+  font-size: 1.2rem;
+  color: #0e2a47;
+  margin-bottom: 8px;
+}
+
+.tracking-feature-text p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Адаптив */
+@media (max-width: 992px) {
+  .tracking-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .tracking-image {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .tracking-section {
+    padding: 60px 0;
+  }
+
+  .tracking-features {
+    margin-top: 30px;
+    gap: 15px;
+  }
+}
