@@ -20,7 +20,6 @@ const ContactSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
     try {
       const response = await fetch("/api/send-email", {
