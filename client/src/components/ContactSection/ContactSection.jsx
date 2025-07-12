@@ -9,8 +9,6 @@ const ContactSection = () => {
     phone: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,7 +20,6 @@ const ContactSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
     try {
       const response = await fetch("/api/send-email", {
@@ -34,12 +31,9 @@ const ContactSection = () => {
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Ошибка сервера");
 
-      setSubmitStatus({ success: true, message: data.message });
       setFormData({ name: "", phone: "", message: "" });
     } catch (error) {
-      setSubmitStatus({ success: false, message: error.message });
-    } finally {
-      setIsSubmitting(false);
+      alert("Ошибка")
     }
   };
 
