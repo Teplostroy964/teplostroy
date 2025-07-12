@@ -1,0 +1,358 @@
+/* ===== Глобальные стили ===== */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;700&display=swap");
+
+/* ===== Базовые стили хедера ===== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: transparent;
+  font-family: "Manrope", sans-serif;
+}
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 5px 30px rgba(14, 42, 71, 0.1);
+  padding: 12px 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ===== Логотип ===== */
+.header-logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.header-logo-main {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #f8c537;
+  text-shadow: 0 2px 4px rgba(248, 197, 55, 0.3);
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.header-logo-sub {
+  font-size: 0.9rem;
+  color: white;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 2px;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled .header-logo-sub {
+  color: #0e2a47;
+}
+
+/* ===== Навигация ===== */
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav-list {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav-link {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled .header-nav-link {
+  color: #0e2a47;
+}
+
+.header-nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f8c537;
+  transition: width 0.3s ease;
+}
+
+.header-nav-link:hover {
+  color: #f8c537;
+  text-shadow: 0 0 10px rgba(248, 197, 55, 0.4);
+}
+
+.header-nav-link:hover::before {
+  width: 100%;
+}
+
+/* ===== CTA Кнопка ===== */
+.header-cta {
+  position: relative;
+  padding: 14px 28px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #e63946 0%, #d62b3a 100%);
+  color: white;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+  margin-left: 30px;
+}
+
+.header-cta::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0e2a47 0%, #1a3a5f 100%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.header-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+}
+
+.header-cta:hover::after {
+  opacity: 1;
+}
+
+.header-cta span {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== Мобильное меню ===== */
+.header-mobile-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.header-mobile-btn svg {
+  transition: all 0.3s ease;
+}
+
+.header.scrolled .header-mobile-btn svg {
+  color: #0e2a47;
+}
+
+.header-mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(14, 42, 71, 0.98);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.header-mobile-menu.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.header-mobile-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.header-mobile-item {
+  margin: 20px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.header-mobile-menu.active .header-mobile-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header-mobile-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.header-mobile-item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.header-mobile-item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.header-mobile-item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.header-mobile-link {
+  color: white;
+  text-decoration: none;
+  font-size: 2.2rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.header-mobile-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: #f8c537;
+  transition: width 0.3s ease;
+}
+
+.header-mobile-link:hover {
+  color: #f8c537;
+}
+
+.header-mobile-link:hover::after {
+  width: 80%;
+}
+
+.header-mobile-contacts {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.header-mobile-phone {
+  display: block;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.header-mobile-phone:hover {
+  color: #f8c537;
+}
+
+.header-mobile-cta {
+  background: #f8c537;
+  color: #0e2a47;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(248, 197, 55, 0.3);
+}
+
+.header-mobile-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(248, 197, 55, 0.4);
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 1200px) {
+  .header-container {
+    padding: 0 30px;
+  }
+
+  .header-nav-list {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header-nav,
+  .header-cta {
+    display: none;
+  }
+
+  .header-mobile-btn {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-logo-main {
+    font-size: 1.8rem;
+  }
+
+  .header-logo-sub {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+  }
+
+  .header-mobile-link {
+    font-size: 1.8rem;
+  }
+
+  .header-mobile-phone {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 20px;
+  }
+
+  .header-mobile-link {
+    font-size: 1.5rem;
+    padding: 8px 15px;
+  }
+
+  .header-mobile-contacts {
+    margin-top: 30px;
+  }
+
+  .header-mobile-cta {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
