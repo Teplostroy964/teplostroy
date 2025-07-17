@@ -1,0 +1,169 @@
+.interior-section {
+  padding: 6rem 0;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.interior-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.interior-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.interior-title {
+  font-family: "Manrope", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.interior-title span {
+  color: #2563eb;
+}
+
+.interior-subtitle {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.1rem;
+  color: #4b5563;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.interior-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.interior-card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 350px;
+  transition: all 0.3s ease;
+}
+
+.interior-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.interior-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.interior-card:hover .interior-card-image {
+  transform: scale(1.05);
+}
+
+.interior-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+}
+
+.interior-card-title {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.interior-card-description {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.interior-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.interior-step {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #f9fafb;
+  transition: all 0.3s ease;
+}
+
+.interior-step:hover {
+  background-color: #f3f4f6;
+  transform: translateY(-5px);
+}
+
+.interior-step-number {
+  font-family: "Manrope", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 1rem;
+}
+
+.interior-step-title {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.interior-step-description {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.interior-button {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.875rem 1.75rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.interior-button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .interior-section {
+    padding: 4rem 0;
+  }
+
+  .interior-title {
+    font-size: 2rem;
+  }
+
+  .interior-card {
+    height: 250px;
+  }
+}
