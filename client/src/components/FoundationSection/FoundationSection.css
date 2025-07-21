@@ -1,0 +1,140 @@
+.foundation-section {
+  padding: 6rem 0;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.foundation-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.foundation-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.foundation-title {
+  font-family: "Manrope", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.foundation-title span {
+  color: #2563eb;
+}
+
+.foundation-subtitle {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.1rem;
+  color: #4b5563;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.foundation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.foundation-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.foundation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.foundation-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.foundation-card-content {
+  padding: 1.5rem;
+}
+
+.foundation-card-title {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.foundation-card-description {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.foundation-card-features {
+  margin-bottom: 1.5rem;
+}
+
+.foundation-card-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.foundation-card-feature svg {
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.foundation-card-price {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 1rem;
+}
+
+.foundation-card-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.foundation-card-button:hover {
+  background-color: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+  .foundation-section {
+    padding: 4rem 0;
+  }
+
+  .foundation-title {
+    font-size: 2rem;
+  }
+
+  .foundation-grid {
+    grid-template-columns: 1fr;
+  }
+}
